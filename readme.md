@@ -53,10 +53,13 @@ Alternative, you can use your favorite IDE to open the project's `.csproj` file.
 distributed via this repository; copy that file from `<game_path>\White Knuckle_Data\Managed`
 directory into the project's `lib` directory.
 
-For faster development and testing iteration, this project has a post-build event that installs the mod by copying the
-mod's `.dll` into the appropriate folder, along with the asset files. Note: post-build event target path is relevant to
-my machine; **change to
-point to the game path in your machine**.
+The project has a pre-build step to copy the necessary game files mentioned above. This can save you the hassle of
+manually copying those files, and in case the game receives an update, this makes sure you're using the latest game
+files for your build.
+
+For faster development and testing iteration, this project also has a post-build event that installs the mod by copying
+the mod's `.dll` into the appropriate folder, along with the asset files. Note: post-build event target path is relevant
+to my machine; **change it to point to the game path in your machine**.
 
 ---
 
@@ -88,10 +91,13 @@ break.
 You can use the included GIMP 2.10 project, which features a simple gloved hand sprite work. You can change the color of
 the gloves by painting on the `glove-color` layer (make sure you're not painting the layer mask).
 
-Save the image as a `png` file, with the name `left_hand.png` or `right_hand.png`, according to the hand you want to texture, and save it under the `<game_dir>\BepinEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite\assets` directory. 
+Save the image as a `png` file, with the name `left_hand.png` or `right_hand.png`, according to the hand you want to
+texture, and save it under the `<game_dir>\BepinEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite\assets`
+directory.
 
 You can use different sprite files for each hand by naming your custom sprite file to `left_hand.png` and
-`right_hand.png` (the mod looks for both files, and if any of them doesn't exist, it just uses the default sprite for that hand). If you want to use the same sprite for both hands, just copy/paste and rename the file.
+`right_hand.png` (the mod looks for both files, and if any of them doesn't exist, it just uses the default sprite for
+that hand). If you want to use the same sprite for both hands, just copy/paste and rename the file.
 
 **Note**: when saving the modified hand sprite, make sure you're exporting with image format RGBA32 (or RGBA 8 bits per
 channel, depending on your image editing software; they're the same thing).
