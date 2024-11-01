@@ -2,6 +2,8 @@
 
 This a mod for White Knuckle demo, made using [BepInEx5](https://github.com/BepInEx/BepInEx).
 
+![image showcasing the mod in action, where custom hand sprites are used](doc/showcase.png)
+
 ## Features
 
 This mod loads custom sprite files to be used in the game, in place of the player character's hands.
