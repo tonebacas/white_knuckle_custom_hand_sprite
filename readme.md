@@ -1,15 +1,19 @@
-﻿# White Knuckle demo custom Hand sprite mod
+﻿# White Knuckle demo: Custom Hand sprite mod
 
-This mod for the demo version of White Knuckle was made using [BepInEx5](https://github.com/BepInEx/BepInEx).
+This a mod for White Knuckle demo, made using [BepInEx5](https://github.com/BepInEx/BepInEx).
 
-## Mod features
+## Features
 
-Loading of custom hand sprite (see Custom hand sprites section)
+This mod loads custom sprite files to be used in the game, in place of the player character's hands.
+See the [Usage section](#usage)  to learn how to install and use the mod.
 
-## Mod usage requirements
+## **Usage requirements
 
-To use this mod, you must have **BepInEx5 x64** installed in the game, and set `HideManagerGameObject` to `true` in
-BepInEx5's configuration file at `<game_path>\BepInEx\config\BepInEx.cfg`.
+To use this mod, you must have **BepInEx5 x64** installed in the game (currently, latest version
+is https://github.com/BepInEx/BepInEx/releases/download/v5.4.23.2/BepInEx_win_x64_5.4.23.2.zip)
+
+Also, you have to configure BepInEx5 and set `HideManagerGameObject` to `true` in
+the configuration file at `<game_path>\BepInEx\config\BepInEx.cfg`.
 
 If you've installed BepInEx5 x64 but don’t see the configuration file, start the game once and then exit; the file will
 be created at that location.
@@ -20,9 +24,9 @@ be created at that location.
 
 If you just want to install the mod, use a pre-built binary.
 
-See releases section of this repository.
+[Download from Releases.](https://github.com/tonebacas/white_knuckle_custom_hand_sprite/releases/tag/1.0.0)
 
-Check Mod Usage section for usage instructions.
+Check [Usage section](#usage) for usage instructions.
 
 ---
 
@@ -50,24 +54,29 @@ distributed via this repository; copy that file from `<game_path>\White Knuckle_
 directory into the project's `lib` directory.
 
 For faster development and testing iteration, this project has a post-build event that installs the mod by copying the
-mod's `.dll` into the appropriate folder (note: post-build event target path is relevant to my machine; **change to
-point to the game path in your machine**).
+mod's `.dll` into the appropriate folder, along with the asset files. Note: post-build event target path is relevant to
+my machine; **change to
+point to the game path in your machine**.
 
 ---
 
-## Mod usage
+## Usage
 
 ### Installation
 
-Place the compiled mod's `.dll` into the `<game_path>\BepInEx\plugins` directory.
+Extract the release file into the game directory.
 
-### Mod configuration
+### Uninstallation
+
+Simply delete the mod's directory `<game_path>\BepInEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite`.
+
+### Configuration
 
 After installing the mod and running the game once, a configuration file will be created in
 `<game_path>\BepInEx\config`, which you can edit in a text editor to configure the mod's options.
-Currently, the only option is to enable or disable the mod.
+Currently, there is only option to enable or disable the mod.
 
-### Custom hand sprites
+### Making and using custom hand sprites
 
 Custom hand textures can be made by using the base `template.png` image in
 `<game_dir>\BepinEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite\assets`.
@@ -79,16 +88,18 @@ break.
 You can use the included GIMP 2.10 project, which features a simple gloved hand sprite work. You can change the color of
 the gloves by painting on the `glove-color` layer (make sure you're not painting the layer mask).
 
-Save the image as a `png` file, with the name `left_hand.png` or `right_hand.png` accordingly.
+Save the image as a `png` file, with the name `left_hand.png` or `right_hand.png`, according to the hand you want to texture, and save it under the `<game_dir>\BepinEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite\assets` directory. 
+
+You can use different sprite files for each hand by naming your custom sprite file to `left_hand.png` and
+`right_hand.png` (the mod looks for both files, and if any of them doesn't exist, it just uses the default sprite for that hand). If you want to use the same sprite for both hands, just copy/paste and rename the file.
 
 **Note**: when saving the modified hand sprite, make sure you're exporting with image format RGBA32 (or RGBA 8 bits per
-channel, depending on your image editing software). This mod loads images in that format, so saving images in other
+channel, depending on your image editing software; they're the same thing).
+This mod loads images in that format, so saving images in other
 formats might not work as expected.
 
 **Note 2**: when exporting with GIMP, in the png export options, you can disable every option to reduce file size.
 
 ![gimp 2.10 png export settings, with the following settings disabled: Interlacing, Save background color, Save gamma, Save layer offset, Save resolution, Save creation time, Save comment, Save color values from transparent pixels, Save Exif data, Save XMP data, Save IPTC data, Save thumbnail, and Save color profile. Export settings changed to 8bpc RGBA, Compression level 9](doc/gimp-png-export-settings.png)
 
-You can use different sprite files for each hand by naming your custom sprite file to `left_hand.png` and
-`right_hand.png` (the game looks for both files; if any of them doesn't exist, the mod just defaults to the original
-sprite atlas for that hand). If you want to use the same sprite for both hands, just make a copy of and rename the file.
+

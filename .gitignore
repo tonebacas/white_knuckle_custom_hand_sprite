@@ -1,6 +1,7 @@
 ﻿/lib/Assembly-CSharp.dll
 /obj
 /bin
+/releases
 /.vs
 /.idea
 
