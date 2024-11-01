@@ -97,7 +97,7 @@ You can use the included GIMP 2.10 project, which features a simple gloved hand 
 the gloves by painting on the `glove-color` layer (make sure you're not painting the layer mask).
 
 Save the image as a `png` file, with the name `left_hand.png` or `right_hand.png`, according to the hand you want to
-texture, and save it under the `<game_dir>\BepinEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite\assets`
+texture, and save it under the `<game_dir>\BepInEx\plugins\com.tonebacas.white_knuckle_demo_custom_hand_sprite\assets`
 directory.
 
 You can use different sprite files for each hand by naming your custom sprite file to `left_hand.png` and
